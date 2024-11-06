@@ -1,6 +1,8 @@
 *{
     box-sizing: border-box;
+
 }
+
 
 /*menu*/
 .sidenav {
@@ -63,11 +65,16 @@ padding: 0.5rem;
 box-shadow: 0px 4px 8px #9193a4;
 }
 body{
-  background: radial-gradient(white 50%, #ded9d9);
+  background-image: url(splash.webp), url(fohatter.jpg);
+  background-position: left bottom, auto;
+  background-size: 1300px, auto;
+  background-repeat: no-repeat, repeat;
+
+
 }
 .gallary{
     margin: auto;
-max-width: 1000px;
+    max-width: 1000px;
     padding:1rem;
 }
 
