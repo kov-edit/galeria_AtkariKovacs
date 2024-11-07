@@ -39,9 +39,16 @@
   margin-left: 50px;
 }
 
+.menu {
+  background-color: rgb(250, 176, 38);
+  text-align: center;
+  /*ide width:40px-et akarok*/
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+  .menu {width: auto;}
 }
 
 
