@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    },
+    {
+        "id": 2,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/kép1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/kép4.jpg"
+    },
+    {
+        "id": 4,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/kép5.jpg"
+    },
+    {
+        "id": 5,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    },
+    {
+        "id": 6,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    },
+    {
+        "id": 7,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    },
+    {
+        "id": 8,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    },
+    {
+        "id": 9,
+        "name": "corgi",
+        "price": 200,
+        "image": "kepek/corgi.jpg"
+    }
+]
