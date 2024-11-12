@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="festmenyek.css">
     <title>Festmények</title>
   <style>
 *{
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 /*menu*/
   .sidenav1 {
@@ -55,9 +56,9 @@
 }
 
 
-/*oldal*/
+/*oldal
 *, *:before, *:after {
-	box-sizing: border-box;
+	/*box-sizing: border-box;
 }
 body, h1, h2, h3, h4, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
 	margin: 0;
@@ -73,7 +74,7 @@ img {
 }
 a {
 	color: inherit;
-	font-weight: bold; /*csak a képeknek kéne hogy legyen*/
+	font-weight: bold; /*csak a képeknek kéne hogy legyen
 }
 input, button, textarea, select {
 	font: inherit;
@@ -135,7 +136,7 @@ main {
 .product:hover .product-content, .product:focus .product-content {
 	border-color: transparent;
 }
-.product-image {
+.product-image{
 	border-radius: 0.25rem 0.25rem 0 0;
 	overflow: hidden;
 }
@@ -190,20 +191,23 @@ main {
 }
 
 
-/*cart*/
-#cart {
+/*cart - jobbra fel valami hoveres színes háttérrel
+#kosar {
   text-align: right;
   padding-right: 60px;
   padding-top: 30px;
 }
-#cart:hover {
+#kosar:hover {
   background-color: chocolate;
-  /*nem tudom hogy kell hoverrel hátteret adni*/
+  /*nem tudom hogy kell hoverrel hátteret adni
 }
 
+.favourite {
+  color: red;
+}*/
   </style>
 </head>
-<body>
+<body class=" ">
 <div id="mySidenav1" class="sidenav1">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
@@ -214,7 +218,7 @@ main {
     <a href="index.html">Főoldal</a>
 </div>
       
-    <div id="main1"> <!--Fő div: csak akkor tolódik valami odébb a navbarral ha itt van ebben-->
+<div id="main1"> <!--Fő div: csak akkor tolódik valami odébb a navbarral ha itt van ebben-->
         <div style="background-color: peachpuff;padding: 10px;"> <!--Ez ide valszeg nem kell-->
             <span style="font-size:35px;cursor:pointer;width: 25px;" onclick="openNav1()">&#9776; M e n u </span>
         </div>
@@ -222,26 +226,73 @@ main {
 
 
 
-        <div id="cart">  <!--Működésére ötlet: https://codyhouse.co/gem/add-to-cart-interaction-->
-          <p>🛒</p>
+        <!--<div id="cart">  Működésére ötlet: https://codyhouse.co/gem/add-to-cart-interaction 
+          <p id="kosar">🛒</p>
+        </div>  ez is működhet -->
+
+
+
+
+        <div class="container">
+          <header>
+            <div class="title">  </div>
+            <div class="icon-cart">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+              </svg>              
+              <span>0</span>
+            </div>
+          </header>
+          <div id="contentTab">
+
+          </div>
+
+          <div class="listProduct">
+            <div class="item">
+              <img src="kepek/corgi.jpg" />
+              <h2>name</h2>
+              <div class="price">200 ft</div>
+              <button class="addCart">🛒</button>
+            </div>
+
+          </div>
+        </div> <!--container lezárója-->
+
+        <div class="cartTab">
+          <h1>Shooping cart</h1>
+          <div class="listCart">
+            <div class="item">
+              
+            </div>
+          </div>
+          <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">Check out</button>
+          </div>
         </div>
-        <!--Próba-->
+        
+
+
+
+        <!--Próba
+        
         <div class="responsive-container" style="padding-bottom: 30px;">
             <div class="grid">
               <div class="grid-column">
+
                 <a class="product" href="#">
-                  <div class="product-image">
-                    <img src="kepek/corgi.jpg" />
-                  </div>
+                  
                   <div class="product-content">
-                    <button class="product-action" class="favourite" onclick="szinvalt()">♥</button> 
+                    <button class="product-action favourite" onclick="szinvalt()">♥</button> 
                     <div class="product-info">
                       <h2 class="product-title">Cosmonaut</h2>
                       <p class="product-price">$ 10</p>
                     </div>
-                    <button class="product-action">🛒</button>
+                    <button class="product-action addCart">🛒</button>
                   </div>
                 </a>
+
+
                 <a class="product" href="#">
                   <div class="product-image">
                     <img src="kepek/kép1.jpg" />
@@ -354,15 +405,118 @@ main {
                 </a>
               </div>
             </div>
-          </div>
-    </div>
-
+          </div>-->
+</div> <!--main lezárója-->
 <script>
-  function szinvalt() {
-    document.getElementsByClassName("favourite").style.backgroundColor = "red";  //nem tudom megírni :(
+
+
+  let iconCart = document.querySelector('.icon-cart');
+  let closeCart = document.querySelector('.cartTab .close');
+  let body = document.querySelector('body');
+  let listProductHTML = document.querySelector('.listProduct')
+  let listCartHTML = document.querySelector('.listCart');
+  let iconCartSpan = document.querySelector('.icon-cart span');
+
+  let listProducts = [];
+  let carts = [];
+
+  iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  })
+  closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart')
+  })
+
+  const addDataToHTML = () => {
+    listProductHTML.innerHTML = '';
+    if(listProducts.length > 0) {
+      listProducts.forEach(product => {
+        let newProduct = document.createElement('div');
+        newProduct.classList.add('item');
+        newProduct.dataset.id = product.id;
+        newProduct.innerHTML = `
+          <img src="${product.image}" />
+          <h2>${product.name}</h2>
+          <div class="price">${product.price}</div>
+          <button class="addCart">🛒</button>
+          `;
+          listProductHTML.appendChild(newProduct);
+      })
+    }
   }
 
-  
+
+  listProductHTML.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if(positionClick.classList.contains('addCart')) {
+      let product_id = positionClick.parentElement.dataset.id;
+      addToCart(product_id);
+    }
+  })
+
+  const addToCart = (product_id) => {
+    let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id); 
+    if(carts.length <= 0) {
+      carts = [{
+        product_id: product_id,
+        quantity: 1
+      }]
+    } else if (positionThisProductInCart < 0){
+      carts.push({
+        product_id: product_id,
+        quantity: 1
+      })
+    } else {
+      carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
+    }
+    addCartToHTML();
+    //addCartToMemory esetleg - https://www.youtube.com/watch?v=gXWohFYrI0M
+  }
+
+  const addCartToHTML = () => {
+    listCartHTML.innerHTML = '';
+    let totalQuantity = 0;
+    if (carts.length > 0) {
+      carts.forEach(cart => {
+        totalQuantity = totalQuantity * cart.quantity;
+        let newCart = document.createElement('div');
+        newCart.classList.add('item');
+        let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+        let info = listProducts[positionProduct];
+        newCart.innerHTML = `
+          <div class="image">
+            <img src="${info.image}" alt="">
+          </div>
+          <div class="name">
+            ${info.name}
+          </div>
+          <div class="totalPrice">
+            ${info.price * cart.quantity}
+          </div>
+          <div class="quantity">
+            <span class="minus">-</span>
+            <span>${cart.quantity}</span>
+            <span class="plus">+</span>
+          </div>
+          `;
+        listCartHTML.appendChild(newCart);
+      })
+    }
+    iconCartSpan.innerText = totalQuantity;
+  }
+
+
+  const initApp = () => {
+    //get data from json
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+      listProducts = data;
+      addDataToHTML();
+    })
+  }
+  initApp();
+
 </script>
 
 
