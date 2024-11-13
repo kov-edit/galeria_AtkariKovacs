@@ -17,3 +17,5 @@ function closeNav1() {
   document.getElementById("mySidenav1").style.width = "0";
   document.getElementById("main1").style.marginLeft= "0";
 }
+
+
