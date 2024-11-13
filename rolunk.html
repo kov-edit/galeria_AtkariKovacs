@@ -59,7 +59,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Cinzel', serif;
 }
 
 header {
@@ -110,6 +110,7 @@ nav {
 
 .about {
     background: linear-gradient(360deg, rgb(249, 217, 214) 0%, rgb(247, 213, 213) 100%);
+
     padding: 100px 20px 20px 20px;
     text-align: center;
 }
@@ -198,26 +199,116 @@ footer {
     padding: 20px 0;
     background-color: #f1f1f1;
 }
+
+.w3-animate-bottom{
+    animation-duration: 3s;
+}
+
+#rolunk{
+    animation-duration: 3s;
+    font-family: 'Cinzel', serif;
+
+margin-top: 30px;
+border-top: 2px solid #776b5e;
+border-bottom: 3px solid #ecd68c;
+color: #000;
+
+
+  text-align: center;
+  font-size: 70px; 
+  font-weight: bold;
+  
+  top: 0;
+
+  margin: auto;
+  width: 100%;
+  transition: 0.2s;
+}
+#cart {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icon-cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #555;
+}
+
+.icon-cart span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+
     </style>
 </head>
 <body>
     <div id="mySidenav1" class="sidenav1">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-        <a href="festmenyek.html">Festmények</a>
-        <a href="szobrok.html">Szobrok</a>
-        <a href="kosar.html">Kosár</a>
-        <a href="rolunk.html">Rólunk</a>
-        <a href="index.html">Főoldal</a>
+        <a href="javascript:void(0)" class="closebtn"  onclick="closeNav1()">&times;</a>
+        <a href="festmenyek.html" style="--clr:#b89934" data-text="Festmények">Festmények</a>
+        <a href="szobrok.html"style="--clr:#b89934" data-text="Festmények">Szobrok</a>
+        <a href="kosar.html"style="--clr:#b89934" data-text="Festmények">Pénztár</a>
+        <a href="rolunk.html"style="--clr:#b89934" data-text="Festmények">Rólunk</a>
+        <a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
     </div>
     
     <div id="main1">
-        <div style="background-color: rgb(247, 92, 81); padding: 10px;   position: fixed; top: 0; width: 100%;">
-            <span style="font-size:35px; cursor:pointer;" onclick="openNav1()">&#9776; Menu</span>
+        <div style="margin-bottom: 60px; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1;">
+            <div style="background-color: rgb(247, 92, 81); padding: 10px;">
+                <span style="font-size:35px;cursor:pointer;" onclick="openNav1()">&#9776;</span>
+				
+            </div>
+
+            <div id="cart">
+                <span id="kosar" class="icon-cart">🛒 
+                <span>0</span></span>
+            </div>
+            <h1 id="rolunk" class="w3-container w3-center w3-animate-bottom">Rólunk</h1>
         </div>
+    <div class="w3-container w3-center w3-animate-bottom">
+
+        <script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("rolunk").style.fontSize = "30px";
+                document.getElementById("rolunk").style.marginTop = "15px";
+                document.getElementById("rolunk").style.border = "none";
+               document.getElementById("rolunk").style.position = "fixed";
+                document.getElementById("rolunk").style.top = "0";
+                document.getElementById("rolunk").style.width = "100%";
+                document.getElementById("rolunk").style.overflow = "hidden";
+                document.getElementById("rolunk").style.zIndex = "1"; 
+
+              } else {
+                document.getElementById("rolunk").style.fontSize = "70px";
+                document.getElementById("rolunk").style.marginTop = "100px";
+                document.getElementById("rolunk").style.borderTop = "2px solid #776b5e";
+                document.getElementById("rolunk").style.borderBottom = "3px solid #ecd68c";
+    
+                document.getElementById("rolunk").style.position = "fixed";
+                document.getElementById("rolunk").style.top = "0";
+                document.getElementById("rolunk").style.width = "100%";
+                document.getElementById("rolunk").style.overflow = "hidden";
+                document.getElementById("rolunk").style.zIndex = "1";
+
+                document.getElementById("responsive-container").marginTop = "500px";
+                
+
+              }
+            }
+            </script>
 
         <section class="about">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas officiis commodi incidunt qui eum sed iure cum officia natus vero ipsa repellat minus. Incidunt voluptate excepturi alias magnam repudiandae!.</p>
+
+            <p style="opacity: 0;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas officiis commodi incidunt qui eum sed iure cum officia natus vero ipsa repellat minus. Incidunt voluptate excepturi alias magnam repudiandae!.</p>
             <div class="about-info">
                 <div class="about-img">
                     <img src="kepek/corgi.jpg" alt="About Us Image">
@@ -251,7 +342,7 @@ footer {
                 </div>
             </div>
         </section>
-    
+    </div>
         <footer>
             <p>&copy; 2024 YourCompany. All Rights Reserved.</p>
         </footer>

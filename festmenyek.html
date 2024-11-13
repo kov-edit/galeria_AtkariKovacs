@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="festmenyek.css">
-    <title>Festmények és Szobrok</title>
+    <title>Artistic Oasis - Festmények</title>
     <style>
 /*menu*/
 .sidenav1 {
@@ -19,6 +20,7 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  font-family: 'Cinzel', serif;
 }
 
 .sidenav1 a {
@@ -28,6 +30,7 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+  font-family: 'Cinzel', serif;
 }
 
 .sidenav1 a:hover {
@@ -55,7 +58,9 @@
 body {
 	scroll-behavior: smooth;
 	line-height: 1.5;
-	background-color: #fff;
+	background-image: url(kepek/jolesz.jpg);
+    background-size: auto ;
+    font-family: 'Cinzel', serif;
 }
 
 /* Cart Icon */
@@ -252,6 +257,40 @@ body {
 		margin-top: 1.5rem;
 	}
 }
+.w3-animate-bottom{
+    animation-duration: 3s;
+}
+
+#header{
+    animation-duration: 3s;
+    font-family: 'Cinzel', serif;
+
+margin-top: 30px;
+border-top: 2px solid #776b5e;
+border-bottom: 3px solid #ecd68c;
+color: #000;
+
+
+  text-align: center;
+  font-size: 70px; 
+  font-weight: bold;
+  
+  top: 0;
+
+  margin: auto;
+  width: 100%;
+  transition: 0.2s;
+}
+
+
+
+
+.mySidenav1 a:hover {
+    color: #b89934;
+}
+
+
+
 
 
     </style>
@@ -260,30 +299,70 @@ body {
 <body>
 <!-- Side Navigation Menu -->
 <div id="mySidenav1" class="sidenav1">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-    <a href="festmenyek.html">Festmények</a>
-    <a href="szobrok.html">Szobrok</a>
-    <a href="kosar.html">Kosár</a>
-    <a href="rolunk.html">Rólunk</a>
-    <a href="index.html">Főoldal</a>
+    <a href="javascript:void(0)" class="closebtn"  onclick="closeNav1()">&times;</a>
+    <a href="festmenyek.html" style="--clr:#b89934" data-text="Festmények">Festmények</a>
+    <a href="szobrok.html"style="--clr:#b89934" data-text="Festmények">Szobrok</a>
+    <a href="kosar.html"style="--clr:#b89934" data-text="Festmények">Pénztár</a>
+    <a href="rolunk.html"style="--clr:#b89934" data-text="Festmények">Rólunk</a>
+    <a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
 </div>
 
 <div id="main1">
-    <div style="background-color: peachpuff; padding: 10px;">
-        <span style="font-size:35px; cursor:pointer;" onclick="openNav1()">&#9776; Menu</span>
-    </div>
+    <div style="margin-bottom: 60px; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1;">
+        <div style="background-color: peachpuff; padding: 10px; ">
+            <span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776;</span> 
+            <!--<span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776; Menu</span>-->
+        </div>
 
         <div id="cart">
             <span id="kosar" class="icon-cart">🛒 
-                <span>0</span></span>
+            <span>0</span></span>
         </div>
+        <h1 id="header" class="w3-container w3-center w3-animate-bottom">Festmények</h1>
+    </div>
+    
+    <div id="contentesdiv" class="w3-container w3-center w3-animate-bottom">
         
-    <!-- Product List Section -->
-    <div class="responsive-container" style="padding-bottom: 30px;">
-        <div class="grid">
-            <div class="grid-column">
+        <script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "30px";
+                document.getElementById("header").style.marginTop = "15px";
+                document.getElementById("header").style.border = "none";
+               document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0";
+                document.getElementById("header").style.width = "100%";
+                document.getElementById("header").style.overflow = "hidden";
+                document.getElementById("header").style.zIndex = "1"; 
+
+              } else {
+                document.getElementById("header").style.fontSize = "70px";
+                document.getElementById("header").style.marginTop = "100px";
+                document.getElementById("header").style.borderTop = "2px solid #776b5e";
+                document.getElementById("header").style.borderBottom = "3px solid #ecd68c";
+                //document.getElementById("header").style.marginBottom = "50px";
+                document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0";
+                document.getElementById("header").style.width = "100%";
+                document.getElementById("header").style.overflow = "hidden";
+                document.getElementById("header").style.zIndex = "1";
+
+                document.getElementById("responsive-container").marginTop = "500px";
+                
+
+
+              }
+            }
+            </script>
+                <!-- Product List Section -->
+        <div class="responsive-container" style="padding-bottom: 30px; padding-top: 130px;" >
+            <div class="grid" style="margin-top: 140px;">
+                <div class="grid-column">
                 <!-- Example Product (Repeat as needed) -->
-                <a class="product" href="#">
+                    <a class="product" href="#">
                     <div class="product-image">
                         <img src="kepek/corgi.jpg" alt="Product Image" />
                     </div>
@@ -295,20 +374,22 @@ body {
                         </div>
                         <button class="product-action addCart">🛒</button>
                     </div>
-                </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping Cart Tab -->
+        <div class="cartTab">
+            <h1>Bevásárlókocsi</h1>
+            <div class="listCart"></div>
+            <div class="btn">
+                <button class="close">Bezárás</button>
+                <button class="checkOut"><a href="kosar.html" style="text-decoration: none;">Pénztár</a></button>
             </div>
         </div>
     </div>
 
-    <!-- Shopping Cart Tab -->
-    <div class="cartTab">
-        <h1>Shopping Cart</h1>
-        <div class="listCart"></div>
-        <div class="btn">
-            <button class="close">CLOSE</button>
-            <button class="checkOut">Check out</button>
-        </div>
-    </div>
 </div>
 
 <!-- JavaScript Code -->

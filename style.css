@@ -195,8 +195,7 @@ ul li a {
     position: relative;
     font-size: 28pt;
     text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 2px;
+
 
     -webkit-text-stroke:rgba(255, 255, 255, 0.5);
     font-family: 'Cinzel', serif;
@@ -209,13 +208,15 @@ ul li a::before {
     color: var(--clr);
     width: 0;
     overflow: hidden;
-    transition: 0.8s;
-    -webkit-text-stroke:  var(--clr);
+    transition: 0.5s;
+    -webkit-text-stroke:  #dabc5b;
+    font-family: 'Cinzel', serif;
 }
 
 ul li a:hover::before {
     width: 100%;
-    filter: drop-shadow(0 0 0px var(--clr));
+    filter: drop-shadow(0 0 0px #dabc5b);
+    font-family: 'Cinzel', serif;
 }
 
 

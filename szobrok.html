@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="script.js"></script>
     <title>Szobrok</title>
     <style>
@@ -55,7 +56,7 @@
 }
 
 #container {
-	height: 100vh;
+	height: 200px;
 	display: grid;
 	place-items: center
 }
@@ -131,39 +132,74 @@
 .slide img{
   cursor: pointer;
 }
+body{
+	background-image: url(kepek/festmenyekhatter5.jfif);
+	font-family: 'Cinzel', serif;
+	scroll-behavior: smooth;
+	line-height: 1.5;
+}
 
+#header{
+	animation-duration: 3s;
+    font-family: 'Cinzel', serif;
+
+
+border-top: 2px solid #776b5e;
+border-bottom: 3px solid #ecd68c;
+color: #000;
+
+
+  text-align: center;
+  font-size: 70px; 
+  font-weight: bold;
+  margin: auto;
+  top: 0;
+margin-bottom: 0px;
+  
+  width: 100%;
+  transition: 0.2s;
+}
+
+.w3-animate-bottom{
+	animation-duration: 1.5;
+}
     </style>
 </head>
 <body>
     <div id="mySidenav1" class="sidenav1">
       
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-        <a href="festmenyek.html">Festmények</a>
-        <a href="szobrok.html">Szobrok</a>
-        <a href="kosar.html">Kosár</a>
-        <a href="">Rólunk</a>
-        <a href="index.html">Főoldal</a>
+		<a href="javascript:void(0)" class="closebtn"  onclick="closeNav1()">&times;</a>
+		<a href="festmenyek.html" style="--clr:#b89934" data-text="Festmények">Festmények</a>
+		<a href="szobrok.html"style="--clr:#b89934" data-text="Festmények">Szobrok</a>
+		<a href="kosar.html"style="--clr:#b89934" data-text="Festmények">Pénztár</a>
+		<a href="rolunk.html"style="--clr:#b89934" data-text="Festmények">Rólunk</a>
+		<a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
       
         
     </div>
 
 
-    <div style="background-image: url(kepek/hatterszobor.PNG);">
+    <div>
 
    
         <div id="main1"> <!--Fő div: csak akkor tolódik valami odébb a navbarral ha itt van ebben-->
+			
             <div style="background-color: peachpuff;padding: 10px;"> <!--Ez ide valszeg nem kell-->
-                <span style="font-size:35px;cursor:pointer;width: 25px;" onclick="openNav1()">&#9776; M e n u </span>
-            </div>
-        </div>
-            
-        <div id="container">
-          <div id="slider-container">
-            <span onclick="slideRight()" class="btn"></span>
-            <div id="slider">
+                <span style="font-size:35px;cursor:pointer;width: 25px;" onclick="openNav1()">&#9776;</span>
+				<span id="kosar" class="icon-cart" style="float: right; font-size: 24px;     color: #555;     display: flex;
+    align-items: center;">🛒  <span     style="margin-left: 8px;
+					font-size: 18px;" >0</span></span>
+			</div>
+        
+		<h1 id="header" class="w3-container w3-center w3-animate-bottom">Szobrok</h1>
+		
 
-              <div class="slide"><img src="kepek/szobor2.png" width="300px" onclick="alert('Még nem elérhető')"></div>  
+        <div id="container" style="margin-top: 0; padding: 0;" class="w3-container w3-center w3-animate-bottom">
+          <div id="slider-container" style="margin-top: 0;">
+            <span onclick="slideRight()" class="btn"></span>
+            <div id="slider" style="margin-top: 0;">
+
+              <div class="slide" ><img src="kepek/szobor2.png" width="300px" onclick="alert('Még nem elérhető')"></div>  
               <div class="slide"><img src="kepek/szobor4.png" width="200px"  onclick="alert('Még nem elérhető')"></div>
               <div class="slide"><img src="kepek/szobor2.png"  width="300px"  onclick="alert('Még nem elérhető')"></div>
               <div class="slide"><img src="kepek/szobor4.png" width="200px"  onclick="alert('Még nem elérhető')"></div>
