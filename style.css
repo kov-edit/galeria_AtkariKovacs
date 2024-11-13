@@ -48,8 +48,9 @@
 
 @media screen and (max-width: 400px) {
   .sidenav a {
+    
     text-align: center;
-    float: none  ;
+    float: none ;
   }
 }
 
@@ -190,13 +191,14 @@ ul li {
 }
 
 ul li a {
+  
     position: relative;
     font-size: 28pt;
     text-decoration: none;
     line-height: 1em;
     letter-spacing: 2px;
-    color: white;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+
+    -webkit-text-stroke:rgba(255, 255, 255, 0.5);
     font-family: 'Cinzel', serif;
 
   }
@@ -208,12 +210,16 @@ ul li a::before {
     width: 0;
     overflow: hidden;
     transition: 0.8s;
-    -webkit-text-stroke: 1px var(--clr);
+    -webkit-text-stroke:  var(--clr);
 }
 
 ul li a:hover::before {
     width: 100%;
-    filter: drop-shadow(0 0 2px var(--clr));
+    filter: drop-shadow(0 0 0px var(--clr));
 }
 
 
+a{
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+}
