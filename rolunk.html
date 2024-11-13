@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="festmenyek.css">
+    <title>Festmények és Szobrok</title>
+    <style>
+        /*menu*/
+        .sidenav1 {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        }
+
+        .sidenav1 a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        }
+
+        .sidenav1 a:hover {
+        color: #f1f1f1;
+        }
+
+        .sidenav1 .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        }
+
+        #main1 {
+        transition: margin-left .5s;
+        /*padding: 16px;*/
+        }
+
+        @media screen and (max-height: 450px) {
+        .sidenav1 {padding-top: 15px;}
+        .sidenav1 a {font-size: 18px;}
+        }
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #40b736;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background-color: #40b736;
+    border-radius: 4px;
+    color: white;
+}
+
+.about {
+    background: linear-gradient(360deg, rgb(249, 217, 214) 0%, rgb(247, 213, 213) 100%);
+    padding: 100px 20px 20px 20px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1 rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-img {
+    width: 30rem;
+    height: 30rem;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.about-info p {
+    font-size: 1.3rem;
+    margin: 0 2rem;
+    text-align: justify;
+}
+
+.team {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav1" class="sidenav1">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+        <a href="festmenyek.html">Festmények</a>
+        <a href="szobrok.html">Szobrok</a>
+        <a href="kosar.html">Kosár</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="index.html">Főoldal</a>
+    </div>
+    
+    <div id="main1">
+        <div style="background-color: rgb(247, 92, 81); padding: 10px;   position: fixed; top: 0; width: 100%;">
+            <span style="font-size:35px; cursor:pointer;" onclick="openNav1()">&#9776; Menu</span>
+        </div>
+
+        <section class="about">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas officiis commodi incidunt qui eum sed iure cum officia natus vero ipsa repellat minus. Incidunt voluptate excepturi alias magnam repudiandae!.</p>
+            <div class="about-info">
+                <div class="about-img">
+                    <img src="kepek/corgi.jpg" alt="About Us Image">
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sequi officia, voluptates voluptatibus reiciendis incidunt minima tempore quod dicta, voluptate totam eos omnis nesciunt voluptas consequatur laborum obcaecati laboriosam praesentium.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="kepek/kép4.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>CEO & Founder</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates unde excepturi blanditiis porro dolores culpa id nemo. Nam illum, consequuntur modi saepe sequi incidunt voluptatum aperiam suscipit distinctio. Aperiam, aspernatur.</p>
+                </div>
+                <div class="team-member">
+                    <img src="kepek/kép3.webp" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Operating Officer</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum sunt in magni itaque, quia amet consequatur quidem, quam quos blanditiis quibusdam maiores molestiae facere assumenda vero hic delectus, perspiciatis animi!</p>
+                </div>
+                <div class="team-member">
+                    <img src="kepek/kép2.avif" alt="Team Member 3">
+                    <h3>Mike Johnson</h3>
+                    <p>Lead Developer</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eius hic temporibus sequi tenetur veniam fugiat quisquam, recusandae corrupti id atque incidunt odio? Culpa fuga soluta vel iste corporis ut!</p>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 YourCompany. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
