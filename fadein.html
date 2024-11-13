@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="festmenyek.css">
     <title>Festmények</title>
+    <style>
+
+.w3-animate-bottom{
+    animation-duration: 3s;
+}
+    </style>
 </head>
 
 <body class=" ">
@@ -26,14 +33,16 @@
 
 
       
-<div id="main1"> <!--Fő div: csak akkor tolódik valami odébb a navbarral ha itt van ebben-->
+<div id="main1" > <!--Fő div: csak akkor tolódik valami odébb a navbarral ha itt van ebben-->
         <div style="background-color: peachpuff;padding: 10px;"> <!--Ez ide valszeg nem kell-->
             <span style="font-size:35px;cursor:pointer;width: 25px;" onclick="openNav1()">&#9776; M e n u </span>
         </div>
 
+<div class="w3-container w3-center w3-animate-bottom">
+
 
         
-        <div class="container">
+        <div class="container " >
           <header> <!--kosár-->
             <div class="title">  </div>
             <div class="icon-cart">
@@ -47,8 +56,8 @@
           <!--<div id="contentTab"> oldal tartalma (nem kell???)
           </div>-->
 
-          <div class="listProduct"> oldal tartalma
-            <div class="item">
+          <div class="listProduct"> 
+            <div class="item" class="tag">
               <img src="kepek/corgi.jpg" />
               <h2>name</h2>
               <div class="price">200 ft</div>
@@ -88,9 +97,25 @@
             <button class="checkOut">Check out</button>
           </div>
         </div>
+    </div>
 </div> <!--main lezárója-->
 
 <script>
+$(document).on("scroll", function() {
+  var pageTop = $(document).scrollTop();
+  var pageBottom = pageTop + $(window).height();
+  var tags = $(".tag");
+
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    if ($(tag).position().top < pageBottom) {
+      $(tag).addClass("visible");
+    } else {
+      $(tag).removeClass("visible");
+    }
+  }
+});
 
 
   let iconCart = document.querySelector('.icon-cart');
