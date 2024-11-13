@@ -3,10 +3,610 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Kosár</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="festmenyek.css">
+    <title>Artistic Oasis - Festmények</title>
+    <style>
+/*menu*/
+.sidenav1 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: 'Cinzel', serif;
+}
+
+.sidenav1 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Cinzel', serif;
+}
+
+.sidenav1 a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav1 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main1 {
+  transition: margin-left .5s;
+  /*padding: 16px;*/
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav1 {padding-top: 15px;}
+  .sidenav1 a {font-size: 18px;}
+}
+
+body {
+	scroll-behavior: smooth;
+	line-height: 1.5;
+	background-image: url(kepek/jolesz.jpg);
+    background-size: auto ;
+    font-family: 'Cinzel', serif;
+}
+
+/* Cart Icon */
+#cart {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icon-cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #555;
+}
+
+.icon-cart span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+/* Responsive Container */
+.responsive-container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+/* Product Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-column > * + * {
+	margin-top: 2rem;
+}
+
+/* Product Item */
+.product {
+	border-radius: 0.25rem;
+	text-decoration: none;
+	font-weight: 400;
+	transition: 0.15s ease;
+	overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.product-content {
+	padding: 1rem;
+	border-left: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+	border-radius: 0 0 0.25rem 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: 0.15s ease;
+	background-color: #fff;
+}
+
+.product-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.product-title {
+	font-size: 1.125rem;
+	line-height: 1.25;
+}
+
+.product-price {
+	margin-top: 0.25rem;
+}
+
+/* Product Action Buttons */
+.product-action {
+	color: #000;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 0.25rem;
+	font-size: 1.25rem;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: 0.15s ease;
+}
+
+.product-action:hover {
+    background-color: #ff4c4c;
+}
+
+/* Shopping Cart */
+.cartTab {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.4s ease;
+    display: grid;
+}
+
+.showCart .cartTab {
+    right: 0;
+}
+
+.cartTab h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: black
+}
+
+.listCart {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.listCart .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.listCart .item .name {
+    flex: 1;
+    font-size: 16px;
+    color: #111;
+}
+
+.listCart .item .quantity {
+    font-size: 14px;
+    color: #111;
+}
+
+.listCart .item .totalPrice {
+    font-size: 16px;
+    color: black;
+}
+
+.cartTab .btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartTab button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.cartTab button:hover {
+    background-color: #ff4c4c;
+}
+
+@media all and (max-width: 600px) {
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 1.5rem;
+	}
+	 .grid-column > * + * {
+		margin-top: 1.5rem;
+	}
+}
+.w3-animate-bottom{
+    animation-duration: 3s;
+}
+
+#header{
+    animation-duration: 3s;
+    font-family: 'Cinzel', serif;
+
+margin-top: 30px;
+border-top: 2px solid #776b5e;
+border-bottom: 3px solid #ecd68c;
+color: #000;
+
+
+  text-align: center;
+  font-size: 70px; 
+  font-weight: bold;
+  
+  top: 0;
+
+  margin: auto;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.btn{
+
+}
+
+
+.mySidenav1 a:hover {
+    color: #b89934;
+}
+
+body{
+    background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    font-family: 'Cinzel', serif;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; 
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; 
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; 
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .containerk {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+
+  .containerk button{
+    color: white;
+    background-color: #111;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  
+
+  
+  hr {
+    border: 1px solid lightgrey;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+.penztargomb{
+    color: #ccc;
+    background-color: #ad8a15;
+    padding: 10px;
+    border: none;
+}
+
+
+    </style>
 </head>
+
 <body>
+<!-- Side Navigation Menu -->
+<div id="mySidenav1" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn"  onclick="closeNav1()">&times;</a>
+    <a href="festmenyek.html" style="--clr:#b89934" data-text="Festmények">Festmények</a>
+    <a href="szobrok.html"style="--clr:#b89934" data-text="Festmények">Szobrok</a>
+    <a href="kosar.html"style="--clr:#b89934" data-text="Festmények">Pénztár</a>
+    <a href="rolunk.html"style="--clr:#b89934" data-text="Festmények">Rólunk</a>
+    <a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
+</div>
+
+<div id="main1">
+    <div style="margin-bottom: 60px; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1;">
+        <div style="background-color: peachpuff; padding: 10px; ">
+            <span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776;</span> 
+            <!--<span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776; Menu</span>-->
+        </div>
+
+        <div id="cart">
+            <span id="kosar" class="icon-cart">🛒 
+            <span>0</span></span>
+        </div>
+        <h1 id="header" class="w3-container w3-center w3-animate-bottom">Pénztár</h1>
+    </div>
     
+    <div id="contentesdiv" class="w3-container w3-center w3-animate-bottom">
+        <p style="opacity: 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quas velit totam accusantium quidem explicabo dolorem alias magni. Asperiores ab voluptatem commodi odio molestias assumenda velit natus, quae quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nemo velit. Quae aliquid totam soluta provident architecto excepturi, tenetur odio impedit quod dicta eum dolore fugiat consequatur sint voluptatum earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ratione dolor esse hic temporibus enim inventore maxime nisi veritatis repellendus voluptas ea ut, molestias provident ex earum vel nam nemo!</p>
+        <script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "30px";
+                document.getElementById("header").style.marginTop = "15px";
+                document.getElementById("header").style.border = "none";
+               document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0";
+                document.getElementById("header").style.width = "100%";
+                document.getElementById("header").style.overflow = "hidden";
+                document.getElementById("header").style.zIndex = "1"; 
+
+              } else {
+                document.getElementById("header").style.fontSize = "70px";
+                document.getElementById("header").style.marginTop = "100px";
+                document.getElementById("header").style.borderTop = "2px solid #776b5e";
+                document.getElementById("header").style.borderBottom = "3px solid #ecd68c";
+                //document.getElementById("header").style.marginBottom = "50px";
+                document.getElementById("header").style.position = "fixed";
+                document.getElementById("header").style.top = "0";
+                document.getElementById("header").style.width = "100%";
+                document.getElementById("header").style.overflow = "hidden";
+                document.getElementById("header").style.zIndex = "1";
+
+                document.getElementById("responsive-container").marginTop = "500px";
+                
+
+
+              }
+            }
+            </script>
+                <!-- Product List Section -->
+        <div class="responsive-container" style="padding-bottom: 30px; padding-top: 130px;" >
+            <div class="row">
+                <div class="col-75">
+                  <div class="containerk">
+                    <form action="/action_page.php">
+                    
+                      <div class="row">
+                        <div class="col-50">
+                            <h3>Adatok</h3>
+                          <label for="fname"><i class="fa fa-user"></i> Teljes név</label>
+                          <input type="text" id="fname" name="firstname">
+                          <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                          <input type="text" id="email" name="email">
+                          <label for="adr"><i class="fa fa-address-card-o"></i> Cím</label>
+                          <input type="text" id="adr" name="address">
+
+                        </div>
+                        
+              
+                        <div class="col-50">
+                          <h3>Fizetés</h3>
+                          
+                          <label for="cname">Kártyán lévő név</label>
+                          <input type="text" id="cname" name="cardname">
+                          <label for="ccnum">Kártyaszám</label>
+                          <input type="text" id="ccnum" name="cardnumber">
+
+                          <div class="row">
+                            <div class="col-50">
+                                <label for="expmonth">Lejárat</label>
+                                <input type="text" id="expmonth" name="expmonth">
+                            </div>
+                            
+                            <div class="col-50">
+                              <label for="cvv">CVV</label>
+                              <input type="text" id="cvv" name="cvv">
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                      <input type="submit" value="Fizetés" class="penztargomb">
+                    </form>
+                  </div>
+                </div>
+                <div class="col-25">
+
+            <h1>Bevásárlókocsi</h1> <!-- Shopping Cart Tab ide a teljes !!!!!! -->
+            <div class="listCart"></div>
+            <div class="btn">
+                <button class="close">Vásárlás folytatása</button>
+
+            </div>
+        </div>
+                </div>
+              </div>
+        </div>
+
+        
+        
+    </div>
+
+</div>
+
+<!-- JavaScript Code -->
+<script>
+
+    let iconCart = document.querySelector('.icon-cart');
+    let closeCart = document.querySelector('.cartTab .close');
+    let body = document.querySelector('body');
+    let listProductHTML = document.querySelector('.grid');
+    let listCartHTML = document.querySelector('.listCart');
+    let iconCartSpan = document.querySelector('.icon-cart span');
+
+    let listProducts = [];
+    let carts = [];
+
+    iconCart.addEventListener('click', () => {
+        body.classList.toggle('showCart');
+    });
+
+    closeCart.addEventListener('click', () => {
+        body.classList.toggle('showCart');
+    });
+
+    // Function to Render Product List
+    const addDataToHTML = () => {
+        listProductHTML.innerHTML = '';
+        if (listProducts.length > 0) {
+            listProducts.forEach(product => {
+                let newProduct = document.createElement('a');
+                newProduct.classList.add('product');
+                newProduct.dataset.id = product.id;
+                newProduct.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" />
+                    </div>
+                    <div class="product-content">
+                        <button class="product-action">♥</button>
+                        <div class="product-info">
+                            <h2 class="product-title">${product.name}</h2>
+                            <p class="product-price">${product.price}</p>
+                        </div>
+                        <button class="product-action addCart">🛒</button>
+                    </div>
+                `;
+                listProductHTML.appendChild(newProduct);
+            });
+        }
+    };
+
+    // Add Product to Cart
+    listProductHTML.addEventListener('click', (event) => {
+        if (event.target.classList.contains('addCart')) {
+            let product_id = event.target.closest('.product').dataset.id;
+            addToCart(product_id);
+        }
+    });
+
+    const addToCart = (product_id) => {
+        let positionInCart = carts.findIndex(item => item.product_id == product_id);
+        if (positionInCart < 0) {
+            carts.push({ product_id, quantity: 1 });
+        } else {
+            carts[positionInCart].quantity++;
+        }
+        addCartToHTML();
+    };
+
+    const addCartToHTML = () => {
+        listCartHTML.innerHTML = '';
+        let totalQuantity = 0;
+        carts.forEach(cart => {
+            let product = listProducts.find(item => item.id == cart.product_id);
+            totalQuantity += cart.quantity;
+            listCartHTML.innerHTML += `
+                <div class="item">
+                    <div class="image"><img src="${product.image}" alt=""></div>
+                    <div class="name">${product.name}</div>
+                    <div class="quantity">${cart.quantity}</div>
+                    <div class="totalPrice">${cart.quantity * product.price}</div>
+                </div>
+            `;
+        });
+        iconCartSpan.textContent = totalQuantity;
+    };
+
+    const initApp = () => {
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                listProducts = data;
+                addDataToHTML();
+            });
+    };
+    initApp();
+</script>
 </body>
 </html>
