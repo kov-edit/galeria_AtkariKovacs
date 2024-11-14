@@ -378,10 +378,16 @@ body{
   }
 
 .penztargomb{
-    color: #ccc;
+    color: #fff;
     background-color: #ad8a15;
     padding: 10px;
     border: none;
+}
+
+.penztargomb:hover{
+    color: #fff;
+    background-color: #645214;
+
 }
 
 
@@ -402,7 +408,7 @@ body{
 <div id="main1">
     <div style="margin-bottom: 60px; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1;">
         <div style="background-color: peachpuff; padding: 10px; ">
-            <span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776;</span> 
+            <span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776;  Art Oasis <span style="color: red;">.</span></span> 
             <!--<span style="font-size:35px; cursor:pointer; " onclick="openNav1()">&#9776; Menu</span>-->
         </div>
 
@@ -493,17 +499,11 @@ body{
                       </div>
                       
                       <input type="submit" value="Fizetés" class="penztargomb">
+                      <button class="close penztargomb" style="float: right;">Vásárlás folytatása</button>
                     </form>
                   </div>
                 </div>
-                <div class="col-25">
 
-            <h1>Bevásárlókocsi</h1> <!-- Shopping Cart Tab ide a teljes !!!!!! -->
-            <div class="listCart"></div>
-            <div class="btn">
-                <button class="close">Vásárlás folytatása</button>
-
-            </div>
         </div>
                 </div>
               </div>
