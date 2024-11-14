@@ -1,55 +1,55 @@
 [
     {
         "id": 1,
-        "name": "corgi",
+        "name": "festmeny1",
         "price": 200,
         "image": "kepek/corgi.jpg"
     },
     {
         "id": 2,
-        "name": "corgi",
+        "name": "festmeny2",
         "price": 200,
         "image": "kepek/corgi.jpg"
     },
     {
         "id": 3,
-        "name": "corgi",
+        "name": "festmeny3",
         "price": 200,
-        "image": "kepek/kép4.jpg"
+        "image": "kepek/corgi.jpg"
     },
     {
         "id": 4,
-        "name": "corgi",
+        "name": "festmeny4",
         "price": 200,
         "image": "kepek/kép5.jpg"
     },
     {
         "id": 5,
-        "name": "corgi",
+        "name": "festmeny5",
         "price": 200,
         "image": "kepek/kép2.avif"
     },
     {
         "id": 6,
-        "name": "corgi",
+        "name": "festmeny6",
         "price": 200,
         "image": "kepek/kép3.webp"
     },
     {
         "id": 7,
-        "name": "corgi",
+        "name": "festmeny7",
         "price": 200,
-        "image": "kepek/szobor.jpg"
+        "image": "kepek/kép2.avif"
     },
     {
         "id": 8,
-        "name": "corgi",
+        "name": "festmeny8",
         "price": 200,
         "image": "kepek/corgi.jpg"
     },
     {
         "id": 9,
-        "name": "corgi",
+        "name": "festmeny9",
         "price": 200,
         "image": "kepek/corgi.jpg"
     }
