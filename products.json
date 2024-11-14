@@ -15,7 +15,7 @@
         "id": 3,
         "name": "corgi",
         "price": 200,
-        "image": "kepek/kép4.jpg"
+        "image": "kepek/corgi.jpg"
     },
     {
         "id": 4,
@@ -39,7 +39,7 @@
         "id": 7,
         "name": "corgi",
         "price": 200,
-        "image": "kepek/szobor.jpg"
+        "image": "kepek/kép2.avif"
     },
     {
         "id": 8,
