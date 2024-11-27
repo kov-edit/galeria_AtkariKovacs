@@ -304,11 +304,11 @@ color: #000;
 <!-- Side Navigation Menu -->
 <div id="mySidenav1" class="sidenav1">
     <a href="javascript:void(0)" class="closebtn"  onclick="closeNav1()">&times;</a>
+    <a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
     <a href="festmenyek.html" style="--clr:#b89934" data-text="Festmények">Festmények</a>
     <a href="szobrok.html"style="--clr:#b89934" data-text="Festmények">Szobrok</a>
     <a href="kosar.html"style="--clr:#b89934" data-text="Festmények">Pénztár</a>
     <a href="rolunk.html"style="--clr:#b89934" data-text="Festmények">Rólunk</a>
-    <a href="index.html"style="--clr:#b89934" data-text="Festmények">Főoldal</a>
 </div>
 
 <div id="main1">
@@ -433,7 +433,7 @@ color: #000;
                         <button class="product-action">X</button>
                         <div class="product-info">
                             <h2 class="product-title">${product.name}</h2>
-                            <p class="product-price">${product.price}</p>
+                            <p class="product-price">${product.price} Ft</p>
                         </div>
                         <button class="product-action addCart">🛒</button>
                     </div>
@@ -472,7 +472,7 @@ color: #000;
                     <div class="image"><img src="${product.image}" alt=""></div>
                     <div class="name">${product.name}</div>
                     <div class="quantity">${cart.quantity}</div>
-                    <div class="totalPrice">${cart.quantity * product.price}</div>
+                    <div class="totalPrice">${cart.quantity * product.price} Ft</div>
                 </div>
             `;
         });
